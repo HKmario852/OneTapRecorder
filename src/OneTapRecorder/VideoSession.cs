@@ -26,8 +26,8 @@ internal sealed class VideoSession : IVideoSession
     public VideoSession(string display, int width, int height, bool systemAudio, bool microphone)
     {
         var audioSources = new List<AudioSourceBase>();
-        if (systemAudio) audioSources.Add(LoopbackAudioSource.Default ?? throw new InvalidOperationException(Localizer.Text("搵唔到聲音輸出裝置。請連接喇叭／耳機，或關閉電腦聲音。")));
-        if (microphone) audioSources.Add(CaptureAudioSource.Default ?? throw new InvalidOperationException(Localizer.Text("搵唔到咪高峰。請連接咪高峰，或關閉咪高峰開關。")));
+        if (systemAudio) audioSources.Add(LoopbackAudioSource.Default ?? throw new InvalidOperationException(Localizer.Text("NoOutputDevice")));
+        if (microphone) audioSources.Add(CaptureAudioSource.Default ?? throw new InvalidOperationException(Localizer.Text("NoMicrophone")));
         recorder = Recorder.CreateRecorder(new RecorderOptions
         {
             SourceOptions = new SourceOptions { RecordingSources = new List<RecordingSourceBase> { new DisplayRecordingSource(display) { RecorderApi = RecorderApi.DesktopDuplication } } },

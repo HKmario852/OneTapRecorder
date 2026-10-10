@@ -34,4 +34,4 @@ Windows 10/11 x64；已附 .NET 執行環境。其他電腦可能需要 Microsof
 
 聲音來自錄製開始時的預設音訊裝置；更換裝置後請重新開始。WAV 約每小時 690 MB，接近 4 GB 單檔上限時會停止並提示。未全面實機驗證咪高峰／雙來源混音、長時間錄製、其他電腦及遊戲相容性。
 
-原始碼建置需要 .NET 9 SDK：`./scripts/Build.ps1`。第三方授權見 `licenses/`；應用程式原始碼目前未授予專案整體開源授權。
+原始碼建置需要 .NET 9 SDK：`./scripts/Build.ps1`。第三方授權見 `licenses/`；應用程式原始碼以 [MIT 授權](LICENSE) 發佈。介面文字在 `src/OneTapRecorder/Strings.resx`（英文）及 `Strings.zh-Hant.resx`（繁體中文）；診斷測試開關只喺 `Diagnostics` 建置版本提供。

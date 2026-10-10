@@ -1,0 +1,30 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 9.0.x
+      - name: Check UI strings
+        shell: pwsh
+        run: ./scripts/Check-Strings.ps1
+      - name: Build Release
+        run: dotnet build src/OneTapRecorder/OneTapRecorder.csproj -c Release -warnaserror
+      # The Diagnostics build holds the test switches; it must keep compiling even though it isn't shipped
+      - name: Build Diagnostics
+        run: dotnet build src/OneTapRecorder/OneTapRecorder.csproj -c Diagnostics -warnaserror
+      - name: Publish Release
+        shell: pwsh
+        run: ./scripts/Build.ps1 -OutputDirectory ./artifacts/OneTapRecorder
+      - uses: actions/upload-artifact@v4
+        with:
+          name: OneTapRecorder-win-x64
+          path: artifacts/OneTapRecorder
