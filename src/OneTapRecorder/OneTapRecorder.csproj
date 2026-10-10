@@ -3,7 +3,7 @@
   <OutputType>WinExe</OutputType><TargetFramework>net9.0-windows</TargetFramework>
   <Nullable>enable</Nullable><ImplicitUsings>disable</ImplicitUsings>
   <UseWPF>true</UseWPF><UseWindowsForms>true</UseWindowsForms>
-  <Platform>x64</Platform><PlatformTarget>x64</PlatformTarget><RuntimeIdentifier>win-x64</RuntimeIdentifier><Version>0.4.1</Version>
+  <Platform>x64</Platform><PlatformTarget>x64</PlatformTarget><RuntimeIdentifier>win-x64</RuntimeIdentifier><Version>0.4.2</Version>
   <ApplicationIcon>app.ico</ApplicationIcon>
   <Configurations>Debug;Release;Diagnostics</Configurations>
   <!-- English is the neutral language in Strings.resx; only ship the Traditional Chinese satellite assemblies -->

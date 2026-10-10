@@ -1,4 +1,14 @@
-# Validation notes — v0.4.1
+# Validation notes — v0.4.2
+
+Tested on one Windows x64 development PC, 2026-10-11 (Hong Kong date).
+
+## v0.4.2 localization and packaging
+
+- UI text moved to `Strings.resx` / `Strings.zh-Hant.resx`. `--render-preview` screenshots of the main window, audio mode and shortcut editor in English and Traditional Chinese are pixel-identical to v0.4.1; the only text change is the English saved heading ("Screen recording saved", previously lowercase).
+- `--language-test` and `--language-test --verify-reload` pass. `scripts/Check-Strings.ps1` finds all 97 keys in both languages.
+- The Release package contains no diagnostics code and only the `zh-Hant` satellite folder. Capture behaviour is unchanged from v0.4.1 and was not re-measured; the screen/audio capture regression tests were not re-run for this text-only change.
+
+## v0.4.1 baseline
 
 Tested on one Windows x64 development PC, 2026-10-10 (Hong Kong date).
 
