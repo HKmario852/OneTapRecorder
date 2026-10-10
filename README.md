@@ -55,8 +55,14 @@ Install the .NET 9 SDK, then run from the repository root:
 ./scripts/Build.ps1 -OutputDirectory ./artifacts/OneTapRecorder
 ```
 
-The script publishes a self-contained x64 app and includes usage/dependency license files. See [diagnostics](docs/VALIDATION.md) before running capture tests; some tests record your actual display/audio.
+The script publishes a self-contained x64 Release build and includes usage/dependency license files. The diagnostic test switches are only in the `Diagnostics` build (`dotnet build src/OneTapRecorder -c Diagnostics`); see [diagnostics](docs/VALIDATION.md) before running capture tests, as some record your actual display/audio.
+
+UI text lives in `src/OneTapRecorder/Strings.resx` (English) and `Strings.zh-Hant.resx` (Traditional Chinese). `./scripts/Check-Strings.ps1` checks that both files have the same keys and that every key used in the code exists.
 
 ## Third-party notices
 
-Uses [ScreenRecorderLib 7.0.1](https://github.com/sskodje/ScreenRecorderLib) and [NAudio.Wasapi 2.4.0](https://github.com/naudio/NAudio), both with MIT license notices in `licenses/`. Those notices apply to the corresponding dependencies. No project-wide open-source license is granted for the application source at this time.
+Uses [ScreenRecorderLib 7.0.1](https://github.com/sskodje/ScreenRecorderLib) and [NAudio.Wasapi 2.4.0](https://github.com/naudio/NAudio), both with MIT license notices in `licenses/`. Those notices apply to the corresponding dependencies.
+
+## License
+
+OneTap Recorder is released under the [MIT License](LICENSE).

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <!-- English (neutral). Keys are used by Localizer.Text and as DynamicResource keys in MainWindow.xaml. -->
+  <data name="AppTitle" xml:space="preserve"><value>OneTap Recorder</value></data>
+  <data name="SettingsLoadFailed" xml:space="preserve"><value>Could not load settings. Using defaults.</value></data>
+  <data name="SettingsSaveFailed" xml:space="preserve"><value>Recording is available, but settings could not be saved.</value></data>
+  <data name="DisplayLabel" xml:space="preserve"><value>▣  Display</value></data>
+  <data name="DisplayNumber" xml:space="preserve"><value>Display {0}</value></data>
+  <data name="PrimaryDisplay" xml:space="preserve"><value> · Primary</value></data>
+  <data name="ModeScreen" xml:space="preserve"><value>Screen + audio</value></data>
+  <data name="ModeAudio" xml:space="preserve"><value>Audio only</value></data>
+  <data name="ReadyHeading" xml:space="preserve"><value>Ready when you are</value></data>
+  <data name="ReadyBadge" xml:space="preserve"><value>●  Ready</value></data>
+  <data name="ScreenSubtitle" xml:space="preserve"><value>Capture your screen and computer audio.</value></data>
+  <data name="AudioSubtitle" xml:space="preserve"><value>Record computer audio or your voice. No video.</value></data>
+  <data name="ComputerAudio" xml:space="preserve"><value>Computer audio</value></data>
+  <data name="ComputerAudioHint" xml:space="preserve"><value>Capture your default speakers or headphones</value></data>
+  <data name="Microphone" xml:space="preserve"><value>Microphone</value></data>
+  <data name="MicrophoneHint" xml:space="preserve"><value>Turn on to add your voice</value></data>
+  <data name="ComputerAudioOn" xml:space="preserve"><value>Computer audio on</value></data>
+  <data name="ComputerAudioOff" xml:space="preserve"><value>Computer audio off</value></data>
+  <data name="MicOn" xml:space="preserve"><value>Mic on</value></data>
+  <data name="MicOff" xml:space="preserve"><value>Mic off</value></data>
+  <data name="ScreenFormat" xml:space="preserve"><value>MP4 · Up to 1080p · 30 fps · Saved locally</value></data>
+  <data name="AudioFormat" xml:space="preserve"><value>WAV · 48 kHz · Stereo · Saved locally</value></data>
+  <data name="StartScreenButton" xml:space="preserve"><value>●   Start screen recording</value></data>
+  <data name="StartAudioButton" xml:space="preserve"><value>●   Start audio recording</value></data>
+  <data name="StartScreen" xml:space="preserve"><value>Start screen recording</value></data>
+  <data name="StartAudio" xml:space="preserve"><value>Start audio recording</value></data>
+  <data name="StopAndSaveButton" xml:space="preserve"><value>■   Stop and save</value></data>
+  <data name="StopAndSave" xml:space="preserve"><value>Stop and save</value></data>
+  <data name="StartingBadge" xml:space="preserve"><value>●  Starting</value></data>
+  <data name="StartingHeading" xml:space="preserve"><value>Getting ready</value></data>
+  <data name="StartingButton" xml:space="preserve"><value>Starting…</value></data>
+  <data name="StartingStatus" xml:space="preserve"><value>Connecting to your display and audio devices…</value></data>
+  <data name="RecordingScreenBadge" xml:space="preserve"><value>●  Recording screen</value></data>
+  <data name="RecordingScreenHeading" xml:space="preserve"><value>Recording your screen</value></data>
+  <data name="RecordingScreenSubtitle" xml:space="preserve"><value>Press again when you are done.</value></data>
+  <data name="RecordingAudioBadge" xml:space="preserve"><value>●  Recording audio</value></data>
+  <data name="RecordingAudioHeading" xml:space="preserve"><value>Recording your audio</value></data>
+  <data name="RecordingAudioSubtitle" xml:space="preserve"><value>You can close this window and keep recording.</value></data>
+  <data name="SavingButton" xml:space="preserve"><value>Saving…</value></data>
+  <data name="SavingBadge" xml:space="preserve"><value>●  Saving</value></data>
+  <data name="SavingScreenHeading" xml:space="preserve"><value>Saving screen recording</value></data>
+  <data name="SavingAudioHeading" xml:space="preserve"><value>Saving audio recording</value></data>
+  <data name="SavingStatus" xml:space="preserve"><value>Finishing your file. Please keep the app running.</value></data>
+  <data name="SavedBadge" xml:space="preserve"><value>●  Saved</value></data>
+  <data name="SavedScreenHeading" xml:space="preserve"><value>Screen recording saved</value></data>
+  <data name="SavedAudioHeading" xml:space="preserve"><value>Audio recording saved</value></data>
+  <data name="SavedFile" xml:space="preserve"><value>Saved: {0}</value></data>
+  <data name="FailedBadge" xml:space="preserve"><value>●  Check settings</value></data>
+  <data name="FailedScreenHeading" xml:space="preserve"><value>Could not finish screen recording</value></data>
+  <data name="FailedAudioHeading" xml:space="preserve"><value>Could not finish audio recording</value></data>
+  <data name="FailedStatus" xml:space="preserve"><value>Check the save folder, display and audio devices, then retry.</value></data>
+  <data name="FailedMessage" xml:space="preserve"><value>{0}.
+
+{1}
+
+Check free disk space, Windows microphone permissions and audio devices.</value></data>
+  <data name="FileIncomplete" xml:space="preserve"><value>The recording could not be completed.</value></data>
+  <data name="NoDisplay" xml:space="preserve"><value>No display is available to record.</value></data>
+  <data name="NoOutputDevice" xml:space="preserve"><value>No audio output device found. Connect speakers/headphones, or turn computer audio off.</value></data>
+  <data name="NoMicrophone" xml:space="preserve"><value>No microphone found. Connect one, or turn the microphone off.</value></data>
+  <data name="AudioSourceRequired" xml:space="preserve"><value>For audio-only recording, turn on computer audio or the microphone.</value></data>
+  <data name="WavLimit" xml:space="preserve"><value>The WAV file size limit was reached. Start a new recording.</value></data>
+  <data name="OpenRecordingsFolder" xml:space="preserve"><value>Open recordings folder</value></data>
+  <data name="ChangeFolder" xml:space="preserve"><value>Change folder</value></data>
+  <data name="OpenFolderFailed" xml:space="preserve"><value>Could not open folder</value></data>
+  <data name="ChooseFolder" xml:space="preserve"><value>Choose where to save recordings</value></data>
+  <data name="SaveFolder" xml:space="preserve"><value>Save folder: {0}</value></data>
+  <data name="TrayOpenWindow" xml:space="preserve"><value>Open window</value></data>
+  <data name="TrayOpenFolder" xml:space="preserve"><value>Open recordings folder</value></data>
+  <data name="TrayExit" xml:space="preserve"><value>Exit</value></data>
+  <data name="TrayReady" xml:space="preserve"><value>OneTap Recorder · Ready</value></data>
+  <data name="TrayStarting" xml:space="preserve"><value>OneTap Recorder · Starting</value></data>
+  <data name="TraySaving" xml:space="preserve"><value>OneTap Recorder · Saving</value></data>
+  <data name="TrayRecording" xml:space="preserve"><value>OneTap Recorder · Recording</value></data>
+  <data name="TrayIdleScreen" xml:space="preserve"><value>OneTap Recorder · Screen + audio · Ready</value></data>
+  <data name="TrayIdleAudio" xml:space="preserve"><value>OneTap Recorder · Audio only · Ready</value></data>
+  <data name="BackgroundTitle" xml:space="preserve"><value>OneTap Recorder is running in the background</value></data>
+  <data name="BackgroundText" xml:space="preserve"><value>Double-click the tray icon to open. Right-click → Exit to quit.</value></data>
+  <data name="ShortcutDefault" xml:space="preserve"><value>Ctrl + Shift + F9  Start / stop</value></data>
+  <data name="ShortcutStartStop" xml:space="preserve"><value>{0}  Start / stop</value></data>
+  <data name="ShortcutUnavailable" xml:space="preserve"><value>{0}  Unavailable. Choose another shortcut.</value></data>
+  <data name="SetShortcut" xml:space="preserve"><value>Set shortcut</value></data>
+  <data name="PressAKey" xml:space="preserve"><value>Press a key…</value></data>
+  <data name="ShortcutEditorHint" xml:space="preserve"><value>Use the same shortcut to start/stop. Esc cancels.</value></data>
+  <data name="ShortcutPrompt" xml:space="preserve"><value>Press a shortcut, e.g. F8 or Ctrl + Shift + R</value></data>
+  <data name="ChooseAnotherKey" xml:space="preserve"><value>Choose another key</value></data>
+  <data name="ShortcutKeyRules" xml:space="preserve"><value>Use letters, numbers or function keys, with optional Ctrl/Alt/Shift. F12 and the Windows key are unavailable.</value></data>
+  <data name="SingleKeyWarning" xml:space="preserve"><value>This key also works in other apps while typing. A function key or modifier combination is recommended.</value></data>
+  <data name="PressSaveHint" xml:space="preserve"><value>Press Save to apply, or press a different shortcut.</value></data>
+  <data name="KeyUnavailable" xml:space="preserve"><value>This key is unavailable. Choose another one.</value></data>
+  <data name="ShortcutInUse" xml:space="preserve"><value>This shortcut is in use or unavailable. Your previous shortcut is unchanged.</value></data>
+  <data name="ShortcutSaved" xml:space="preserve"><value>Shortcut saved: {0}</value></data>
+  <data name="ShortcutNotSaved" xml:space="preserve"><value>Shortcut works for now, but could not be saved for next time.</value></data>
+  <data name="Reset" xml:space="preserve"><value>Reset</value></data>
+  <data name="Cancel" xml:space="preserve"><value>Cancel</value></data>
+  <data name="Save" xml:space="preserve"><value>Save</value></data>
+  <data name="A11yDisplay" xml:space="preserve"><value>Choose display to record</value></data>
+  <data name="A11yComputerAudio" xml:space="preserve"><value>Record computer audio</value></data>
+  <data name="A11yMicrophone" xml:space="preserve"><value>Record microphone</value></data>
+  <data name="A11yRecordButton" xml:space="preserve"><value>Start or stop recording</value></data>
+  <data name="A11yShortcut" xml:space="preserve"><value>Press a new recording shortcut</value></data>
+</root>

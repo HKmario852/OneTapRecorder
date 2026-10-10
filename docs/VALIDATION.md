@@ -43,7 +43,7 @@ Implementation changes: hidden/minimized UI timer disabled, visible timer reduce
 
 ## Diagnostics
 
-Build first. The following switches write results into the final absolute folder argument:
+The switches below exist only in the `Diagnostics` (and `Debug`) build; the Release package leaves the test code out. Build it with `dotnet build src/OneTapRecorder -c Diagnostics -o <folder>` and run `OneTapRecorder.exe` from that folder. Each switch writes results into the final absolute folder argument:
 
 - `--language-test <folder>`; add `--verify-reload` for a second run that checks saved language.
 - `--hotkey-test <folder>`; add `--verify-reload` for saved shortcut checks.

@@ -51,7 +51,7 @@ public partial class MainWindow
     private void UpdateHotkeyLabel()
     {
         string name = HotkeyName(preferences.HotkeyModifiers, preferences.HotkeyKey);
-        ShortcutText.Text = name + (hotkeyRegistered || DiagnosticMode || handle == IntPtr.Zero ? L("  開始／停止") : L("  未能啟用，請重新設定"));
+        ShortcutText.Text = hotkeyRegistered || DiagnosticMode || handle == IntPtr.Zero ? L("ShortcutStartStop", name) : L("ShortcutUnavailable", name);
     }
     private void EditHotkeyClick(object sender, RoutedEventArgs e)
     {
@@ -61,8 +61,8 @@ public partial class MainWindow
         UpdateTray();
         pendingKey = 0;
         pendingModifiers = 0;
-        CaptureHotkeyButton.Content = L("等候按鍵…");
-        HotkeyHint.Text = L("同一快捷鍵會開始／停止錄影。Esc 取消。");
+        CaptureHotkeyButton.Content = L("PressAKey");
+        HotkeyHint.Text = L("ShortcutEditorHint");
         SaveHotkeyButton.IsEnabled = false;
         HotkeyEditor.Visibility = Visibility.Visible;
         RecordButton.IsEnabled = false;
@@ -78,8 +78,8 @@ public partial class MainWindow
         {
             pendingKey = 0;
             SaveHotkeyButton.IsEnabled = false;
-            CaptureHotkeyButton.Content = L("請揀另一個按鍵");
-            HotkeyHint.Text = L("請用英文字母、數字或功能鍵，可加 Ctrl／Alt／Shift。F12 及 Windows 鍵不適用。");
+            CaptureHotkeyButton.Content = L("ChooseAnotherKey");
+            HotkeyHint.Text = L("ShortcutKeyRules");
             return;
         }
         pendingModifiers = modifiers;
@@ -87,8 +87,8 @@ public partial class MainWindow
         CaptureHotkeyButton.Content = HotkeyName(modifiers, key);
         SaveHotkeyButton.IsEnabled = true;
         HotkeyHint.Text = modifiers == 0 && key < 0x70
-            ? L("此單鍵會喺其他程式生效，包括打字時；建議用功能鍵或組合鍵。")
-            : L("按「儲存」套用，或繼續按另一組按鍵。");
+            ? L("SingleKeyWarning")
+            : L("PressSaveHint");
     }
     private void CaptureHotkeyKeyDown(object sender, KeyEventArgs e)
     {
@@ -111,13 +111,13 @@ public partial class MainWindow
     private bool TryApplyHotkey(uint modifiers, uint key, out string error)
     {
         error = "";
-        if (!IsValidHotkey(modifiers, key)) { error = L("呢個按鍵不適用，請揀另一個。"); return false; }
+        if (!IsValidHotkey(modifiers, key)) { error = L("KeyUnavailable"); return false; }
         if (hotkeyRegistered && modifiers == preferences.HotkeyModifiers && key == preferences.HotkeyKey) return true;
         int newId = activeHotkeyId == 1 ? 2 : 1;
         // Register the replacement first: a conflict must never remove the working shortcut.
         if (!RegisterHotKey(handle, newId, 0x4000 | modifiers, key))
         {
-            error = L("呢個快捷鍵已被佔用或系統唔支援，請揀另一個。原有設定已保留。");
+            error = L("ShortcutInUse");
             return false;
         }
         if (hotkeyRegistered) UnregisterHotKey(handle, activeHotkeyId);
@@ -136,8 +136,8 @@ public partial class MainWindow
         if (!TryApplyHotkey(pendingModifiers, pendingKey, out string error)) { HotkeyHint.Text = error; return; }
         bool saved = SavePreferences();
         CloseHotkeyEditor();
-        StatusText.Text = saved ? L("快捷鍵已儲存：") + HotkeyName(preferences.HotkeyModifiers, preferences.HotkeyKey)
-            : L("快捷鍵今次可用，但未能儲存設定，下次開啟要重新設定。");
+        StatusText.Text = saved ? L("ShortcutSaved", HotkeyName(preferences.HotkeyModifiers, preferences.HotkeyKey))
+            : L("ShortcutNotSaved");
     }
     private void CancelHotkeyClick(object sender, RoutedEventArgs e) => CloseHotkeyEditor();
     private void ResetHotkeyClick(object sender, RoutedEventArgs e) => SelectHotkey(6, 0x78);

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <!-- Traditional Chinese (Cantonese wording). Keep the same keys as Strings.resx. -->
+  <data name="AppTitle" xml:space="preserve"><value>一鍵錄影</value></data>
+  <data name="SettingsLoadFailed" xml:space="preserve"><value>上次設定未能讀取，已使用預設設定。</value></data>
+  <data name="SettingsSaveFailed" xml:space="preserve"><value>今次可以繼續錄影，但未能記住設定。</value></data>
+  <data name="DisplayLabel" xml:space="preserve"><value>▣  螢幕</value></data>
+  <data name="DisplayNumber" xml:space="preserve"><value>螢幕 {0}</value></data>
+  <data name="PrimaryDisplay" xml:space="preserve"><value> · 主螢幕</value></data>
+  <data name="ModeScreen" xml:space="preserve"><value>螢幕與聲音</value></data>
+  <data name="ModeAudio" xml:space="preserve"><value>只錄聲音</value></data>
+  <data name="ReadyHeading" xml:space="preserve"><value>準備好就開始</value></data>
+  <data name="ReadyBadge" xml:space="preserve"><value>●  準備就緒</value></data>
+  <data name="ScreenSubtitle" xml:space="preserve"><value>螢幕與電腦聲音，一次錄低。</value></data>
+  <data name="AudioSubtitle" xml:space="preserve"><value>只錄電腦聲音或旁白，唔擷取畫面。</value></data>
+  <data name="ComputerAudio" xml:space="preserve"><value>電腦聲音</value></data>
+  <data name="ComputerAudioHint" xml:space="preserve"><value>錄低預設喇叭／耳機嘅聲音</value></data>
+  <data name="Microphone" xml:space="preserve"><value>咪高峰</value></data>
+  <data name="MicrophoneHint" xml:space="preserve"><value>需要旁白時先開啟</value></data>
+  <data name="ComputerAudioOn" xml:space="preserve"><value>電腦聲音開啟</value></data>
+  <data name="ComputerAudioOff" xml:space="preserve"><value>電腦聲音關閉</value></data>
+  <data name="MicOn" xml:space="preserve"><value>咪高峰開啟</value></data>
+  <data name="MicOff" xml:space="preserve"><value>咪高峰關閉</value></data>
+  <data name="ScreenFormat" xml:space="preserve"><value>MP4 · 最高 1080p · 30 fps · 只儲存喺本機</value></data>
+  <data name="AudioFormat" xml:space="preserve"><value>WAV · 48 kHz · 立體聲 · 只儲存喺本機</value></data>
+  <data name="StartScreenButton" xml:space="preserve"><value>●   開始錄影</value></data>
+  <data name="StartAudioButton" xml:space="preserve"><value>●   開始錄音</value></data>
+  <data name="StartScreen" xml:space="preserve"><value>開始錄影</value></data>
+  <data name="StartAudio" xml:space="preserve"><value>開始錄音</value></data>
+  <data name="StopAndSaveButton" xml:space="preserve"><value>■   停止並儲存</value></data>
+  <data name="StopAndSave" xml:space="preserve"><value>停止並儲存</value></data>
+  <data name="StartingBadge" xml:space="preserve"><value>●  正在準備</value></data>
+  <data name="StartingHeading" xml:space="preserve"><value>準備錄影中</value></data>
+  <data name="StartingButton" xml:space="preserve"><value>正在啟動…</value></data>
+  <data name="StartingStatus" xml:space="preserve"><value>正在連接螢幕同聲音裝置…</value></data>
+  <data name="RecordingScreenBadge" xml:space="preserve"><value>●  錄影中</value></data>
+  <data name="RecordingScreenHeading" xml:space="preserve"><value>正在錄低你嘅畫面</value></data>
+  <data name="RecordingScreenSubtitle" xml:space="preserve"><value>完成後再按一次，即可儲存。</value></data>
+  <data name="RecordingAudioBadge" xml:space="preserve"><value>●  錄音中</value></data>
+  <data name="RecordingAudioHeading" xml:space="preserve"><value>正在錄低聲音</value></data>
+  <data name="RecordingAudioSubtitle" xml:space="preserve"><value>可關閉視窗，喺背景繼續錄音。</value></data>
+  <data name="SavingButton" xml:space="preserve"><value>正在儲存…</value></data>
+  <data name="SavingBadge" xml:space="preserve"><value>●  儲存中</value></data>
+  <data name="SavingScreenHeading" xml:space="preserve"><value>正在儲存錄影</value></data>
+  <data name="SavingAudioHeading" xml:space="preserve"><value>正在儲存錄音</value></data>
+  <data name="SavingStatus" xml:space="preserve"><value>檔案完成前，請保留程式開啟。</value></data>
+  <data name="SavedBadge" xml:space="preserve"><value>●  已儲存</value></data>
+  <data name="SavedScreenHeading" xml:space="preserve"><value>錄影已儲存</value></data>
+  <data name="SavedAudioHeading" xml:space="preserve"><value>錄音已儲存</value></data>
+  <data name="SavedFile" xml:space="preserve"><value>已儲存 {0}</value></data>
+  <data name="FailedBadge" xml:space="preserve"><value>●  需要留意</value></data>
+  <data name="FailedScreenHeading" xml:space="preserve"><value>未能完成錄影</value></data>
+  <data name="FailedAudioHeading" xml:space="preserve"><value>未能完成錄音</value></data>
+  <data name="FailedStatus" xml:space="preserve"><value>請檢查儲存位置、螢幕及聲音裝置，再試一次。</value></data>
+  <data name="FailedMessage" xml:space="preserve"><value>{0}。
+
+{1}
+
+請檢查可用磁碟空間、Windows 咪高峰權限及音訊裝置。</value></data>
+  <data name="FileIncomplete" xml:space="preserve"><value>檔案未能完成。</value></data>
+  <data name="NoDisplay" xml:space="preserve"><value>搵唔到可錄影嘅螢幕。</value></data>
+  <data name="NoOutputDevice" xml:space="preserve"><value>搵唔到聲音輸出裝置。請連接喇叭／耳機，或關閉電腦聲音。</value></data>
+  <data name="NoMicrophone" xml:space="preserve"><value>搵唔到咪高峰。請連接咪高峰，或關閉咪高峰開關。</value></data>
+  <data name="AudioSourceRequired" xml:space="preserve"><value>只錄聲音時，請至少開啟電腦聲音或咪高峰。</value></data>
+  <data name="WavLimit" xml:space="preserve"><value>已到 WAV 單檔大小上限，請重新開始另一段錄音。</value></data>
+  <data name="OpenRecordingsFolder" xml:space="preserve"><value>開啟錄影資料夾</value></data>
+  <data name="ChangeFolder" xml:space="preserve"><value>更改位置</value></data>
+  <data name="OpenFolderFailed" xml:space="preserve"><value>未能開啟資料夾</value></data>
+  <data name="ChooseFolder" xml:space="preserve"><value>選擇錄影儲存位置</value></data>
+  <data name="SaveFolder" xml:space="preserve"><value>儲存位置：{0}</value></data>
+  <data name="TrayOpenWindow" xml:space="preserve"><value>開啟視窗</value></data>
+  <data name="TrayOpenFolder" xml:space="preserve"><value>開啟儲存資料夾</value></data>
+  <data name="TrayExit" xml:space="preserve"><value>結束程式</value></data>
+  <data name="TrayReady" xml:space="preserve"><value>一鍵錄影 · 準備就緒</value></data>
+  <data name="TrayStarting" xml:space="preserve"><value>一鍵錄影 · 正在啟動</value></data>
+  <data name="TraySaving" xml:space="preserve"><value>一鍵錄影 · 正在儲存</value></data>
+  <data name="TrayRecording" xml:space="preserve"><value>一鍵錄影 · 錄製中</value></data>
+  <data name="TrayIdleScreen" xml:space="preserve"><value>一鍵錄影 · 螢幕與聲音 · 準備就緒</value></data>
+  <data name="TrayIdleAudio" xml:space="preserve"><value>一鍵錄影 · 只錄聲音 · 準備就緒</value></data>
+  <data name="BackgroundTitle" xml:space="preserve"><value>一鍵錄影繼續喺背景運行</value></data>
+  <data name="BackgroundText" xml:space="preserve"><value>雙擊圖示可開啟視窗；右鍵 → 結束程式先會完全退出。</value></data>
+  <data name="ShortcutDefault" xml:space="preserve"><value>Ctrl + Shift + F9  開始／停止</value></data>
+  <data name="ShortcutStartStop" xml:space="preserve"><value>{0}  開始／停止</value></data>
+  <data name="ShortcutUnavailable" xml:space="preserve"><value>{0}  未能啟用，請重新設定</value></data>
+  <data name="SetShortcut" xml:space="preserve"><value>設定快捷鍵</value></data>
+  <data name="PressAKey" xml:space="preserve"><value>等候按鍵…</value></data>
+  <data name="ShortcutEditorHint" xml:space="preserve"><value>同一快捷鍵會開始／停止錄影。Esc 取消。</value></data>
+  <data name="ShortcutPrompt" xml:space="preserve"><value>按你想用嘅按鍵，例如 F8 或 Ctrl + Shift + R</value></data>
+  <data name="ChooseAnotherKey" xml:space="preserve"><value>請揀另一個按鍵</value></data>
+  <data name="ShortcutKeyRules" xml:space="preserve"><value>請用英文字母、數字或功能鍵，可加 Ctrl／Alt／Shift。F12 及 Windows 鍵不適用。</value></data>
+  <data name="SingleKeyWarning" xml:space="preserve"><value>此單鍵會喺其他程式生效，包括打字時；建議用功能鍵或組合鍵。</value></data>
+  <data name="PressSaveHint" xml:space="preserve"><value>按「儲存」套用，或繼續按另一組按鍵。</value></data>
+  <data name="KeyUnavailable" xml:space="preserve"><value>呢個按鍵不適用，請揀另一個。</value></data>
+  <data name="ShortcutInUse" xml:space="preserve"><value>呢個快捷鍵已被佔用或系統唔支援，請揀另一個。原有設定已保留。</value></data>
+  <data name="ShortcutSaved" xml:space="preserve"><value>快捷鍵已儲存：{0}</value></data>
+  <data name="ShortcutNotSaved" xml:space="preserve"><value>快捷鍵今次可用，但未能儲存設定，下次開啟要重新設定。</value></data>
+  <data name="Reset" xml:space="preserve"><value>重設預設</value></data>
+  <data name="Cancel" xml:space="preserve"><value>取消</value></data>
+  <data name="Save" xml:space="preserve"><value>儲存</value></data>
+  <data name="A11yDisplay" xml:space="preserve"><value>選擇錄影螢幕</value></data>
+  <data name="A11yComputerAudio" xml:space="preserve"><value>錄製電腦聲音</value></data>
+  <data name="A11yMicrophone" xml:space="preserve"><value>錄製咪高峰</value></data>
+  <data name="A11yRecordButton" xml:space="preserve"><value>開始或停止錄影</value></data>
+  <data name="A11yShortcut" xml:space="preserve"><value>按下新的錄影快捷鍵</value></data>
+</root>

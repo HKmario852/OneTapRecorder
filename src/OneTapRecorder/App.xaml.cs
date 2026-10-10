@@ -13,7 +13,7 @@ public partial class App : Application
     private bool ownsMutex;
     protected override void OnStartup(StartupEventArgs e)
     {
-        if (!e.Args.Any(a => a is "--language-test" or "--resource-test" or "--smoke-test" or "--render-preview" or "--hotkey-test" or "--audio-tray-test"))
+        if (!OneTapRecorder.MainWindow.IsDiagnosticRun(e.Args))
         {
             instanceMutex = new Mutex(true, @"Local\OneTapRecorder.Instance", out ownsMutex);
             showSignal = new EventWaitHandle(false, EventResetMode.AutoReset, @"Local\OneTapRecorder.Show");

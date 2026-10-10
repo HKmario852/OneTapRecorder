@@ -25,7 +25,7 @@ internal sealed class AudioOnlyRecorder
 
     public void Start(string path, bool system, bool microphone)
     {
-        if (!system && !microphone) throw new InvalidOperationException(Localizer.Text("只錄聲音時，請至少開啟電腦聲音或咪高峰。"));
+        if (!system && !microphone) throw new InvalidOperationException(Localizer.Text("AudioSourceRequired"));
         WaveFileWriter? writer = null;
         try
         {
@@ -48,7 +48,7 @@ internal sealed class AudioOnlyRecorder
                     while (framesWritten < target)
                     {
                         int frames = (int)Math.Min(4800, target - framesWritten);
-                        if (ownedWriter.Length + frames * 4 > 4_000_000_000L) throw new IOException(Localizer.Text("已到 WAV 單檔大小上限，請重新開始另一段錄音。"));
+                        if (ownedWriter.Length + frames * 4 > 4_000_000_000L) throw new IOException(Localizer.Text("WavLimit"));
                         int read = pcm.Read(data, 0, frames * 4);
                         ownedWriter.Write(data, 0, read);
                         framesWritten += read / 4;
