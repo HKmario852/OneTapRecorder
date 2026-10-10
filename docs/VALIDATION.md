@@ -1,6 +1,17 @@
-# Validation notes — v0.4.0
+# Validation notes — v0.4.1
 
 Tested on one Windows x64 development PC, 2026-10-10 (Hong Kong date).
+
+## v0.4.1 recording indicators
+
+- Release build: zero warnings/errors. The audio/tray regression suite passes with actual audio and screen capture.
+- Hidden audio and video capture select the red recording icon in the NotifyIcon and WPF Window, and set the taskbar overlay.
+- Stopping selects the amber saving icon; successful completion restores the original tray/window icon and clears the overlay, including consecutive sessions.
+- A rejected audio start leaves the idle icon intact. Close-to-tray and tray Exit still work and finalize files.
+- Three icon images are created once, reused on transitions, and disposed on exit. No animation timer was added.
+- Exported icon bitmaps were visually inspected. Shell icon assignment is checked in the running application; pinned/grouped taskbar rendering across Windows configurations has not been manually verified.
+
+The functional baseline and short resource measurements below were collected for v0.4.0; performance was not re-benchmarked for this icon-only change.
 
 ## Functional checks
 

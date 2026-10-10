@@ -22,10 +22,15 @@ public partial class MainWindow
             SystemAudio.IsChecked = false;
             RecordClick(this, new RoutedEventArgs());
             Require(state == CaptureState.Idle && lastError != null, "Audio mode accepted zero sources.");
+            RequireIdleIcon();
+            results["failedStartKeepsIdleIcon"] = true;
             results["audioModeRejectsNoSources"] = true;
             SystemAudio.IsChecked = true;
             Require(TryApplyHotkey(0, 0x86, out _), "Could not register diagnostic key.");
             Require(trayIcon?.Visible == true && trayMenu?.Items.Count == 5, "Tray icon/menu was not initialized.");
+            using (var idle = trayImage!.ToBitmap()) idle.Save(Path.Combine(folder, "icon-idle.png"));
+            using (var recording = recordingIcon!.ToBitmap()) recording.Save(Path.Combine(folder, "icon-recording.png"));
+            using (var saving = savingIcon!.ToBitmap()) saving.Save(Path.Combine(folder, "icon-saving.png"));
             SavePreview(Path.Combine(folder, "audio-mode.png"));
             Close(); // Same WPF Closing path as the title-bar cross.
             Require(!IsVisible && !exitRequested && state == CaptureState.Idle, "Cross exited instead of hiding.");
@@ -36,6 +41,8 @@ public partial class MainWindow
             TapDiagnosticKey();
             await AwaitRecording();
             Require(audioRecorder != null && recorder == null, "Audio mode started a screen recorder.");
+            RequireRecordingIcon();
+            results["hiddenAudioUsesRecordingIcon"] = true;
             var audioCompletion = completed!.Task;
             using (var tone = new System.Media.SoundPlayer(Path.Combine(folder, "tone.wav")))
             {
@@ -46,28 +53,39 @@ public partial class MainWindow
             }
             Require(!IsVisible && state == CaptureState.Recording, "Background audio capture stopped unexpectedly.");
             trayRecord!.PerformClick();
+            RequireSavingIcon();
             Require(await audioCompletion.WaitAsync(TimeSpan.FromSeconds(15)), lastError ?? "Audio recording did not save.");
+            RequireIdleIcon();
+            results["audioStopShowsSavingThenIdleIcon"] = true;
             results["backgroundHotkeyAudioAndTrayStop"] = true;
             results["audioFile"] = activePath!;
             // Also verify a silent output produces a valid, timed audio-only file.
             trayRecord.PerformClick();
             await AwaitRecording();
+            RequireRecordingIcon();
             var second = completed!.Task;
             await Task.Delay(1100);
             trayRecord.PerformClick();
             Require(await second.WaitAsync(TimeSpan.FromSeconds(15)), "Second audio capture failed.");
+            RequireIdleIcon();
             results["repeatedAudioCapture"] = activePath!;
             RestoreFromTray();
             VideoMode.IsChecked = true;
             SystemAudio.IsChecked = false;
             RecordClick(this, new RoutedEventArgs());
             await AwaitRecording();
+            RequireRecordingIcon();
             var videoCompletion = completed!.Task;
             Close();
             await Task.Delay(1400);
             Require(state == CaptureState.Recording && !IsVisible, "Cross stopped video recording.");
+            RequireRecordingIcon();
+            results["hiddenVideoUsesRecordingIcon"] = true;
             trayRecord.PerformClick();
+            RequireSavingIcon();
             Require(await videoCompletion.WaitAsync(TimeSpan.FromSeconds(30)), "Background video did not save.");
+            RequireIdleIcon();
+            results["videoStopShowsSavingThenIdleIcon"] = true;
             results["crossKeepsVideoRecording"] = activePath!;
             RestoreFromTray();
             AudioMode.IsChecked = true;
@@ -92,5 +110,26 @@ public partial class MainWindow
             if (state == CaptureState.Idle) { exitRequested = true; Close(); Application.Current.Shutdown(Environment.ExitCode); }
             else { closeAfterSave = true; exitRequested = true; if (state == CaptureState.Recording) StopRecording(); }
         }
+    }
+
+    private void RequireRecordingIcon()
+    {
+        Require(ReferenceEquals(trayIcon!.Icon, recordingIcon), "Tray did not show recording icon.");
+        Require(ReferenceEquals(Icon, recordingWindowIcon) && ReferenceEquals(TaskbarItemInfo.Overlay, Icon), "Window/taskbar did not show recording icon.");
+        var current = trayIcon.Icon;
+        UpdateTray();
+        Require(ReferenceEquals(current, trayIcon.Icon), "Unchanged state recreated the icon.");
+    }
+
+    private void RequireSavingIcon()
+    {
+        Require(ReferenceEquals(trayIcon!.Icon, savingIcon), "Tray did not show saving icon.");
+        Require(ReferenceEquals(Icon, savingWindowIcon) && ReferenceEquals(TaskbarItemInfo.Overlay, Icon), "Window/taskbar did not show saving icon.");
+    }
+
+    private void RequireIdleIcon()
+    {
+        Require(ReferenceEquals(trayIcon!.Icon, trayImage), "Tray did not restore idle icon.");
+        Require(ReferenceEquals(Icon, idleWindowIcon) && TaskbarItemInfo.Overlay == null, "Window/taskbar did not restore idle icon.");
     }
 }

@@ -15,6 +15,7 @@ A small, straightforward Windows app for recording your screen and computer audi
 - Computer audio and optional microphone, individually selectable.
 - Custom global shortcut: a single key such as F8, or a combination such as Ctrl + Shift + R.
 - Close the window to keep running in the system tray. Recording continues.
+- Recording changes the tray/window icon to a red circle with a white stop square and adds a taskbar badge. Saving uses an amber icon; completion restores the normal icon. No blinking or extra background timer.
 - Right-click the tray icon to open, start/stop, open the recording folder, or exit. Exit finishes saving first.
 - English and Traditional Chinese UI, including tray menus and shortcut settings. Use the EN / 繁 button to switch.
 - Preferences are remembered. Launching again brings the existing background instance forward.

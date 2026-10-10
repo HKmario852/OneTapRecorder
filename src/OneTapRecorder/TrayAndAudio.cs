@@ -22,6 +22,7 @@ public partial class MainWindow
     private void InitializeTray()
     {
         trayImage = System.Drawing.Icon.ExtractAssociatedIcon(Environment.ProcessPath!) ?? (Icon)SystemIcons.Application.Clone();
+        InitializeStateIcons();
         trayMenu = new Forms.ContextMenuStrip();
         trayMenu.Opening += (_, _) => { UpdateClockDisplay(); UpdateTray(); };
         trayMenu.Items.Add(L("開啟視窗"), null, (_, _) => Dispatcher.Invoke(RestoreFromTray));
@@ -33,12 +34,13 @@ public partial class MainWindow
         trayMenu.Items.Add(trayExit);
         trayIcon = new Forms.NotifyIcon { Icon = trayImage, Text = L("一鍵錄影 · 準備就緒"), ContextMenuStrip = trayMenu, Visible = true };
         trayIcon.DoubleClick += (_, _) => Dispatcher.Invoke(RestoreFromTray);
-        Closed += (_, _) => { trayIcon.Visible = false; trayIcon.Dispose(); trayMenu.Dispose(); trayImage.Dispose(); };
+        Closed += (_, _) => { trayIcon.Visible = false; trayIcon.Dispose(); trayMenu.Dispose(); trayImage.Dispose(); recordingIcon?.Dispose(); savingIcon?.Dispose(); };
         UpdateTray();
     }
     private void UpdateTray()
     {
         if (trayIcon == null || trayRecord == null) return;
+        UpdateStateIcon();
         trayIcon.Text = state switch
         {
             CaptureState.Recording => L("一鍵錄影 · ") + L("錄製中"),
